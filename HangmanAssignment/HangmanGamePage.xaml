@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HangmanAssignment.HangmanGamePage"
+             Title="Hangman Assignment"
+             >
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                
+                <StackLayout Grid.Column="0" BackgroundColor="#8A2BE2">
+                    <Label FontAttributes="Bold"
+                           FontSize="25"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Margin="1"
+                           Text="Guess The Game Console?"
+                           TextColor="White"/>
+                    <Image
+                        x:Name="ConsoleImage"
+                        Source="console.png" 
+                        WidthRequest="30" 
+                        HeightRequest="30" 
+                        Margin="10"/>
+                           
+                </StackLayout>
+            </Grid>
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+
+                <Image Margin="40"
+                       x:Name="HangmanImage"
+                       Source="hang1.png"
+                       HorizontalOptions="Center"/>
+                <Label FontAttributes="Bold"
+                       FontSize="30"
+                       HorizontalOptions="Center"
+                       Margin="40"
+                       x:Name="WordLabel"
+                       Text="{Binding GuessedWord}"/>
+                <Entry FontSize="30"
+                       HorizontalOptions="Center"
+                       Margin="40"
+                       Placeholder="Select A Letter "
+                       x:Name="Entry"/>
+                
+                <Button Text="Hit Me"
+                        FontSize="15"
+                        Clicked="Guess_Clicked"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Black"/>
+                <Label 
+                       
+                       FontSize="30"
+                       HorizontalOptions="Center"
+                       Margin="40"
+                       x:Name="TurnsLabel"
+                       Text="Guesses Left:8"
+                       TextColor="Black"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 
